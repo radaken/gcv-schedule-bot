@@ -1,0 +1,19 @@
+{
+  "name": "gcv-schedule-bot",
+  "version": "1.0.0",
+  "description": "Course project for Gazprom College Volgograd. Sends changes in schedule to groups chat in messangers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radaken/gcv-schedule-bot.git"
+  },
+  "author": "radaken, personalphoenix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radaken/gcv-schedule-bot/issues"
+  },
+  "homepage": "https://github.com/radaken/gcv-schedule-bot#readme"
+}

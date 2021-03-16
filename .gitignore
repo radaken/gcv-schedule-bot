@@ -1,0 +1,15 @@
+#Temporary solution for storing a sensetive data
+SENSETIVE/**
+
+node_modules/
+logs
+*.log
+
+.idea/
+.vscode/
+
+**/*build*/
+**/.*.swp
+**/.DS_Store
+bin/
+vcpkg/
