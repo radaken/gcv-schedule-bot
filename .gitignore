@@ -1,5 +1,4 @@
-#Temporary solution for storing a sensetive data
-SENSETIVE/**
+*.env
 
 node_modules/
 logs
@@ -11,5 +10,3 @@ logs
 **/*build*/
 **/.*.swp
 **/.DS_Store
-bin/
-vcpkg/
