@@ -18,13 +18,13 @@ tgBot.onText(/\/echo (.+)/, (msg, match) => {
   tgBot.sendMessage(chatId, resp);
 });
 
-tgBot.onText(/\/bobs/, function onBobs(msg){
+tgBot.onText(/\/register/, function onBobs(msg){
   // 'msg' is the received Message from Telegram
   // 'match' is the result of executing the regexp above on the text content
   // of the message
 
   const chatId = msg.chat.id;
-  const resp = "hello world, please say *bobs*"
+  const resp = "Введите номер телефона"
   tgBot.sendMessage(chatId, resp);
   tgBot.once('message', (msg) => {
     if (msg.text == "bobs") {
@@ -35,8 +35,45 @@ tgBot.onText(/\/bobs/, function onBobs(msg){
     tgBot.sendMessage(chatId, responbobs);
   })
 })
-/* Listen for any kind of message. There are different kinds of
-// messages.
+
+// Matches /editable
+tgBot.onText(/\/editable/, function onEditableText(msg) {
+  const chatId = msg.chat.id;
+  const opts = {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Edit Text',
+            // we shall check for this value when we listen
+            // for "callback_query"
+            callback_data: 'edit'
+          }
+        ]
+      ]
+    }
+  };
+  tgBot.sendMessage(chatId, 'Original Text', opts);
+});
+
+//рандомный комментари й
+
+tgBot.on('callback_query', function onCallbackQuery(callbackQuery) {
+  const action = callbackQuery.data;
+  const msg = callbackQuery.message;
+  const opts = {
+    chat_id: msg.chat.id,
+    message_id: msg.message_id,
+  };
+  let text;
+
+  if (action === 'edit') {
+    text = 'Edited Text';
+  }
+
+  tgBot.editMessageText(text, opts);
+}); 
+/*
 tgBot.on('message', (msg) => {
   const chatId = msg.chat.id;
 
@@ -55,5 +92,5 @@ botvk.command('/start', (ctx) => {
 botvk.startPolling();
 */
 
-
+tgBot.on('polling_error', (err) => console.log(err))
 app.listen(3000, () => console.log('Server has been started on port 3000...'))
