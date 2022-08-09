@@ -4,7 +4,8 @@
   "description": "Course project for Gazprom College Volgograd. Sends changes in schedule to groups chat in messangers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/radaken/gcv-schedule-bot/issues"
   },
-  "homepage": "https://github.com/radaken/gcv-schedule-bot#readme"
+  "homepage": "https://github.com/radaken/gcv-schedule-bot#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-telegram-bot-api": "^0.52.0",
+    "node-vk-bot-api": "^3.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
